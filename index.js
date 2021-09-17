@@ -30,10 +30,15 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation() {
+function summation(num) {
+// let num = 1;
+// for(let i= 0; i > 1; i++){
+//   return summation(4);
+// }
   
+}
+// I am completely lost when it comes to trying to make this simple sumation work. I think I am over thinking it if the grader could help me out with a sample of what the code should look like that would be amazing
 
-  }
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -56,20 +61,28 @@ const zooAnimals = [
   The zoos want to display both the scientific name and the animal name in front of the habitats. 
   Use animalNames to populate and return the displayNames array with only the animal name and scientific name of each animal. 
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
-  */
+  */// ******for each throws me for a loop >_< hope someone can clarify for me. ****
 
-  function animalNames(){
+  function animalNames(array){
+const newaniArray = array.forEach(function(item){
+return item.animal_name;
+})
+   return newaniArray;
 
   }
   
+
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
   Using lowerCaseNames use .map() to create a new array of strings with the animal's names in lowercase and return the new array. 
   For example: ['jackal, asiatic', .....]
   */
-
-  function lowerCaseNames(){
+  function lowerCaseNames(array){
+    const newArray = array.map(function(item){
+      return item.animal_name.toLowerCase();
+    })
+    return newArray;
 }
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -92,7 +105,10 @@ const zooAnimals = [
   */
 
   function USApop(){
-
+const totalPop = zooAnimals.reduce(function(acc, item){
+  return acc + item.population;
+}, 0);
+return totalPop;
   }
   
 
@@ -230,7 +246,7 @@ surfaceArea(){
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
+// console.log(cuboidMakerTwo.volume()); // 100
 // console.log(cuboidTwo.surfaceArea()); // 130
 
 
